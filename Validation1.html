@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validation of form</title>
+</head>
+<script>
+    
+        function validateForm() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+            const phone = document.getElementById("phone").value;
+            const pincode = document.getElementById("pincode").value;
+
+            if (username.length < 8) {
+                window.alert("Username should be at least 8 characters.");
+                return false;
+            }
+
+            if (password.length < 8) {
+                window.alert("Password should be at least 8 characters.");
+                return false;
+            }
+
+            if (password !== confirmPassword) {
+                window.alert("Passwords do not match.");
+                return false;
+            }
+
+            if (phone.length > 10) {
+                window.alert("Phone number should be at most 10 digits.");
+                return false;
+            }
+
+            if (pincode.length > 6) {
+                window.alert("Pin code should be at most 6 digits.");
+                return false;
+            }
+
+            else{
+                window.alert("Login successful");
+            }
+        }
+    
+</script>
+<body>
+  <h1 align="center">FORM VALIDATION</h1>
+  <p align="center">Enter Username:&nbsp;&nbsp;<input type="text" id="username" ><br><br></p>
+  <p align="center">Enter Password:&nbsp;&nbsp;<input type="text" id="password"><br><br></p>
+  <p align="center">Enter confirm Password:&nbsp;&nbsp;<input type="text" id="confirmPassword"><br><br></p>
+  <p align="center">Enter Phone number:&nbsp;&nbsp;<input type="text" id="phone"><br><br></p>
+  <p align="center">Enter Pincode:&nbsp;&nbsp;<input type="text" id="pincode"><br><br></p>
+  <p align="center"><button type="button" onclick="validateForm()">Login</button></p>
+</body>
+</html>
